@@ -4,28 +4,29 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-class Hive < ActiveRecord::Base
-  self.table_name = 'salesforce.dwnstrm__Hive__C'
-end
+#class Hive < ActiveRecord::Base
+#  self.table_name = 'salesforce.dwnstrm__Hive__C'
+#end
 
-get "/hives" do
-  @hives = Hive.all
-  erb :index
-end
+#get "/hives" do
+#  @hives = Hive.all
+#  erb :index
+#end
 
 get "/" do
   erb :home
 end
+
 #
 
 class Contact < ActiveRecord::Base
   self.table_name = 'salesforce.contact'
 end
 
-#get "/contacts" do
-#  @contacts = Contact.all
-#  erb :index
-#end
+get "/contacts" do
+  @contacts = Contact.all
+  erb :index
+end
 
 get "/create" do
   dashboard_url = 'https://dashboard.heroku.com/'
