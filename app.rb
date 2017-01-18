@@ -9,7 +9,7 @@ class Hive < ActiveRecord::Base
 end
 
 get "/hives" do
-  @hives = dwnstrm__Hives__C.all
+  @hives = dwnstrm__Hive__C.all
   erb :index
 end
 
