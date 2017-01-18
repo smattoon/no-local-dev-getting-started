@@ -4,9 +4,9 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-#class Hive < ActiveRecord::Base
-#  self.table_name = 'salesforce.dwnstrm__Hive__C'
-#end
+class Hive < ActiveRecord::Base
+  self.table_name = 'salesforce.dwnstrm__Hive__C'
+end
 
 #get "/hives" do
 #  @hives = Hive.all
