@@ -35,7 +35,7 @@ end
 
 get "/accounts" do
   @accounts = Account.all
-  erb :account_list
+#  erb :account_list
 end
 
 get "/create" do
