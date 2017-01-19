@@ -4,21 +4,20 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-class Hive < ActiveRecord::Base
-  self.table_name = 'salesforce.dwnstrm__Hive__C'
-end
-
-get "/hives" do
-
-  @hives = Hive.all
-#  erb :index
-end
-
 get "/" do
   erb :home
 end
 
 #
+
+class Account < ActiveRecord::Base
+  self.table_name = 'salesforce.account'
+end
+
+get "/accounts" do
+  @accounts = Account.all
+#  erb :account_list
+end
 
 class Contact < ActiveRecord::Base
   self.table_name = 'salesforce.contact'
@@ -29,13 +28,14 @@ get "/contacts" do
   erb :index
 end
 
-class Account < ActiveRecord::Base
-  self.table_name = 'salesforce.account'
+class Hive < ActiveRecord::Base
+  self.table_name = 'salesforce.dwnstrm__Hive__C'
 end
 
-get "/accounts" do
-  @accounts = Account.all
-#  erb :account_list
+get "/hives" do
+
+  @hives = Hive.all
+#  erb :index
 end
 
 get "/create" do
