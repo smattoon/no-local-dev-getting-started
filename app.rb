@@ -11,7 +11,7 @@ end
 get "/hives" do
 
   @hives = Hive.all
-#  erb :index
+  erb :index
 end
 
 get "/" do
